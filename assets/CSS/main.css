@@ -1,0 +1,25 @@
+@import url("base.css");
+
+header{
+    padding: 10px 0px;
+    background-color: rgb(252, 233, 241);
+}
+
+header ul li{
+    padding: 5px;
+}
+
+header a{
+    color: black;
+    font-weight:bold;
+}
+
+header i{
+    background-color: rgb(252, 233, 241);
+    font-size: 18px;
+}
+
+header button{
+    background-color: rgb(252, 233, 241);
+    cursor: pointer;
+}
