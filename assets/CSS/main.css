@@ -6,7 +6,7 @@ header{
 }
 
 header ul li{
-    padding: 5px;
+    padding: 5px 10px;
 }
 
 header a{
@@ -22,4 +22,18 @@ header i{
 header button{
     background-color: rgb(252, 233, 241);
     cursor: pointer;
+}
+
+.SidebarBtn{
+        display: none;
+}
+
+@media screen and (max-width: 426px){
+    .links{
+        display:none;
+    }
+
+    .SidebarBtn{
+        display: block;
+    }
 }
