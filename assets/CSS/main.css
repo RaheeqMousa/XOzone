@@ -37,3 +37,41 @@ header button{
         display: block;
     }
 }
+
+/*..........................Footer..........................*/
+
+
+footer{
+    background-color: black;
+    color: #ffffff;
+    padding: 20px 0px;
+}
+
+footer ul li{
+    padding: 5px 10px;
+}
+
+footer h5{
+    color: #ffffff;
+}
+
+footer i{
+    font-size: 28px;
+    color: white;
+}
+
+footer a{
+    color: #ffffff;
+}
+
+footer .links{
+    gap:10px;
+}
+
+footer .row{
+padding: 5px 0px;
+}
+
+footer #mail{
+    text-decoration:underline;
+}
