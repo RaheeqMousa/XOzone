@@ -1,6 +1,7 @@
 
 :root{
-    --mainFont:'Mozilla Headline','Aref Ruqaa Ink','Times New Roman';
+    --subFont:'Mozilla Headline','Times New Roman';
+    --mainFont:'Pixelify sans','Times New Roman';
 }
 
 body{

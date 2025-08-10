@@ -1,42 +1,31 @@
 @import url("base.css");
 
+/*............................Header..............................*/
+
 header{
-    padding: 10px 0px;
-    background-color: rgb(252, 233, 241);
-}
-
-header ul li{
-    padding: 5px 10px;
-}
-
-header a{
-    color: black;
-    font-weight:bold;
+    background-color: black;
+    padding: 10px 40px;
 }
 
 header i{
-    background-color: rgb(252, 233, 241);
-    font-size: 18px;
+    font-size: 24px;
+    color: #ffffff;
+    transition: all 0.8s;
+}
+
+header i:hover{
+    font-size: 30px;
+}
+
+header.row{
+    justify-content: flex-end;
 }
 
 header button{
-    background-color: rgb(252, 233, 241);
+    background-color: black;
     cursor: pointer;
 }
 
-.SidebarBtn{
-        display: none;
-}
-
-@media screen and (max-width: 426px){
-    .links{
-        display:none;
-    }
-
-    .SidebarBtn{
-        display: block;
-    }
-}
 
 /*..........................Footer..........................*/
 
@@ -45,27 +34,15 @@ footer{
     background-color: black;
     color: #ffffff;
     padding: 20px 0px;
+    font-family: var(--subFont);
 }
 
-footer ul li{
-    padding: 5px 10px;
-}
-
-footer h5{
+footer h4{
     color: #ffffff;
-}
-
-footer i{
-    font-size: 28px;
-    color: white;
 }
 
 footer a{
     color: #ffffff;
-}
-
-footer .links{
-    gap:10px;
 }
 
 footer .row{
