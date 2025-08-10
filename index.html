@@ -40,13 +40,13 @@
                 <section class="row FlexDirectionColumn LeftRight">
                     <img src="assets/Images/two players.png" alt="Two players" title="Two players" width="250"
                         height="auto">
-                    <a href="TwoPlayers.html">Two Players</a>
+                    <button id="TwoPlayer" class="button ModeBtn">Two Players</button>
                 </section>
 
                 <section class="row FlexDirectionColumn RightLeft">
-                    <img src="assets/Images/one player.webp" alt="Two players" title="Two players" width="250"
+                    <img src="assets/Images/one player.webp" alt="Player vs Computer" title="One player" width="250"
                         height="auto">
-                    <a href="OnePlayer.html">Player VS Computer</a>
+                    <button id="OnePlayer" class="button ModeBtn">Player VS Computer</button>
                 </section>
             </div>
 
@@ -54,6 +54,7 @@
                 <a href="rules.html">Rules</a>
             </div>
         </div>
+
     </main>
 
     <footer>
@@ -68,6 +69,17 @@
         </div>
     </footer>
 
+    <div class="modal DisplayNone">
+        <div class="CloseButtonWrapper">
+            <button id="CloseBtn">X</button>
+        </div>
+
+        <div class="options row FlexDirectionColumn">
+
+        </div>
+    </div>
+
+    <script src="assets/JS/main.js"></script>
 </body>
 
 </html>

@@ -50,6 +50,21 @@ main .intro{
     gap:20px;
 }
 
+.button{
+    font-size: 28px;
+    background-color: #ff007f;
+    color: #ffffff;
+    border-radius: 20px;
+    padding: 5px 10px;
+    transition: all 0.6s;
+    cursor: pointer;
+    font-family: var(--mainFont);
+}
+
+main button:hover{
+    font-size: 2rem;
+}
+
 
 @media screen and (max-width: 600px) {
     .choice{
@@ -72,6 +87,71 @@ h2{
 
 .rules li{
     color: #ffffff;
+}
+
+/*.........................Board Size Modal...............................*/
+
+.modal{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    position: fixed;
+    top:0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.BoardSizeModal{
+    background-color: rgb(255, 255, 255);
+    padding: 20px 40px;
+    border-radius:20px;
+    box-shadow:0 4px 4px rgba(0,0,0,.1);
+    position: relative;
+}
+
+.CloseButtonWrapper{
+    position: absolute;
+    left: 80px;
+    top: 50px;
+    
+}
+
+.CloseButtonWrapper button{
+    color: #f4f6fa;
+    font-weight: bold;
+    font-size: 36px;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.DisplayNone{
+    display: none;
+}
+
+.options select{
+    font-size: 28px;
+    background-color: #04d9ff;
+    color: #ffffff;
+    border-radius: 20px;
+    padding: 5px 10px;
+    transition: all 0.6s;
+    cursor: pointer;
+    font-family: var(--mainFont);
+    width: 100px;
+    text-align: center;
+}
+
+.options .button{
+    background-color: #04d9ff;
+}
+
+.options{
+    gap:20px;
 }
 
 /*..........................Footer..........................*/
