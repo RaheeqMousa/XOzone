@@ -12,9 +12,15 @@ body{
     color: white;
 }
 
-button{
-    border: none;
-    background-color: black;
+h1{
+    font-size: 54px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+a{
+    text-decoration: none;
+    color: white;
 }
 
 ul{
@@ -23,17 +29,12 @@ ul{
 
 ul li{
     list-style: none;
+    line-height: 2;
 }
 
-a{
-    text-decoration: none;
-    color: white;
-}
-
-h1{
-    font-size: 54px;
-    text-align: center;
-    text-decoration: underline;
+button{
+    border: none;
+    background-color: black;
 }
 
 .container{
@@ -79,6 +80,30 @@ h1{
  }
 
  /*...........................Animation...............................*/
+
+.RightLeft, .LeftRight, .UpDown, .DownUp{
+    opacity: 0;
+}
+
+.RightLeft{
+    animation: ToLeft 1s forwards;
+    transform: translateX(50%);
+}
+
+.LeftRight{
+    animation: ToRight 1s forwards;
+    transform: translateX(-50%);
+}
+
+.DownUp{
+    animation: UP 1s forwards;
+    transform: translateY(50%);
+}
+
+.UpDown{
+    animation: ToDown 1s forwards;
+    transform: translateY(-50%);
+}
 
  @keyframes ToDown {
     to{

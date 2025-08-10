@@ -43,37 +43,13 @@ main a:hover{
 }
 
 main .row.FlexCenter a{
-    margin-top: 70px;
+    margin-top: 50px;
 }
 
 main .intro{
     gap:20px;
 }
 
-main .rules, main h1, main .OnePlayer, main .TwoPlayers{
-    opacity: 0;
-}
-
-main .OnePlayer{
-    animation: ToLeft 1s forwards;
-    transform: translateX(50%);
-}
-
-main .TwoPlayers{
-    animation: ToRight 1s forwards;
-    transform: translateX(-50%);
-}
-
-main .rules{
-    gap:20px;
-    animation: UP 1s forwards;
-    transform: translateY(50%);
-}
-
-main h1{
-    animation: ToDown 1s forwards;
-    transform: translateY(-50%);
-}
 
 @media screen and (max-width: 600px) {
     .choice{
@@ -81,6 +57,22 @@ main h1{
     }
 }
 
+/*..........................Rules..............................*/
+
+h2{
+    font-size: 44px;
+    text-align: center;
+    color: #04d9ff;
+}
+
+.rules{
+    font-size: 24px;
+    color: white;
+}
+
+.rules li{
+    color: #ffffff;
+}
 
 /*..........................Footer..........................*/
 
