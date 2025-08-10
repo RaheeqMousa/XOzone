@@ -9,20 +9,22 @@
     <meta name="author" content="Raheeq Mousa">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="assets/CSS/main.css" rel="stylesheet">
-    
+
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
         integrity="..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mozilla+Headline:wght@200..700&display=swap&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mozilla+Headline:wght@200..700&display=swap&family=Pixelify+Sans:wght@400..700&display=swap"
+        rel="stylesheet">
 
 </head>
 
 <body>
 
-    <header class="row">
+    <header class="row JustifyEnd">
         <nav>
             <ul class="row">
                 <li><button id="MusicBtn"><i class="fa-solid fa-music"></i></button></li>
@@ -31,21 +33,38 @@
         </nav>
     </header>
 
-    <main>
+    <main class="container">
+        <div class="Intro">
+            <h1>XOzone</h1>
+            <div class="row choice">
+                <section class="row FlexDirectionColumn TwoPlayers">
+                    <img src="assets/Images/two players.png" alt="Two players" title="Two players" width="250"
+                        height="auto">
+                    <a href="TwoPlayers.html">Two Players</a>
+                </section>
 
+                <section class="row FlexDirectionColumn OnePlayer">
+                    <img src="assets/Images/one player.webp" alt="Two players" title="Two players" width="250"
+                        height="auto">
+                    <a href="OnePlayer.html">Player VS Computer</a>
+                </section>
+            </div>
+
+            <div class="row FlexCenter rules">
+                <a href="rules.html">Rules</a>
+            </div>
+        </div>
     </main>
 
     <footer>
-        <div class="container">
+        <div class="row">
             <div class="row">
-                <div class="row">
-                    <img src="assets/Images/logo.svg" alt="XOzone logo" title="XOzone logo" width="50" height="auto">
-                    <h4>XOzone</h4>
-                </div>
-                <a href="#">Privacy Policy</a>
-                <span>Copyright &copy; 2025 <a href="mailto:raheeqmousa99@gmail.com"
-                        id="mail">raheeqmousa99@gmail.com</a>. All rights reserved</span>
+                <img src="assets/Images/logo.svg" alt="XOzone logo" title="XOzone logo" width="50" height="auto">
+                <h4>XOzone</h4>
             </div>
+            <a href="#">Privacy Policy</a>
+            <span>Copyright &copy; 2025 <a href="mailto:raheeqmousa99@gmail.com" id="mail">raheeqmousa99@gmail.com</a>.
+                All rights reserved</span>
         </div>
     </footer>
 
