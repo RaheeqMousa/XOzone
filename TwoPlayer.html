@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>XOzone</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Tic Tac Toe play Website">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Raheeq Mousa">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/CSS/main.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mozilla+Headline:wght@200..700&display=swap&family=Pixelify+Sans:wght@400..700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <header class="row JustifyEnd">
+        <nav>
+            <ul class="row">
+                <li><button id="MusicBtn"><i class="fa-solid fa-music"></i></button></li>
+                <li><button id="ToggleModeBtn"><i class="fa-solid fa-sun"></i></button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1 class="TurnHeading LeftRight">Tails's Turn</h1>
+        <div class="row TwoPlayersGame">
+            <section class="PlayerOne row FlexDirectionColumn LeftRight">
+                <p>Tails</p>
+                <img src="assets/Images/tails.png" alt="Player two" title="Player two" width="200" height="auto">
+            </section>
+            <section class="board">
+
+            </section>
+            <section class="PlayerTwo row FlexDirectionColumn RightLeft">
+                <p>Sonic</p>
+                <img src="assets/Images/Sonic.png" alt="Player two" title="Player two" width="200" height="auto">
+            </section>
+        </div>
+
+        
+    </main>
+
+    <div class="modal DisplayNone">
+            <div class="CloseButtonWrapper">
+                <button id="CloseBtn">X</button>
+            </div>
+
+            <div class="winner row FlexCenter FlexDirectionColumn">
+
+            </div>
+        </div>
+
+    <footer>
+        <div class="row">
+            <div class="row">
+                <img src="assets/Images/logo.svg" alt="XOzone logo" title="XOzone logo" width="50" height="auto">
+                <h4>XOzone</h4>
+            </div>
+            <a href="#">Privacy Policy</a>
+            <span>Copyright &copy; 2025 <a href="mailto:raheeqmousa99@gmail.com" id="mail">raheeqmousa99@gmail.com</a>.
+                All rights reserved</span>
+        </div>
+    </footer>
+
+    <script src="assets/JS/main.js"></script>
+</body>
+
+</html>

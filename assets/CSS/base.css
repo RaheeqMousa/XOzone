@@ -68,6 +68,10 @@ button{
     justify-content: flex-end;
 }
 
+.AlignStart{
+    align-items: flex-start;
+}
+
 .FlexCenter{
     justify-content: center;
     align-items: center;

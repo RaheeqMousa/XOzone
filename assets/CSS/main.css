@@ -74,9 +74,7 @@ main button:hover{
 
 /*..........................Rules..............................*/
 
-h2{
-    font-size: 44px;
-    text-align: center;
+.rules h1{
     color: #04d9ff;
 }
 
@@ -152,6 +150,65 @@ h2{
 
 .options{
     gap:20px;
+}
+
+/*.........................Board style......................*/
+
+
+.board {
+  display: grid;
+  gap: 2px;
+  width: 400px;
+  height: 400px;
+  margin: 20px auto;
+}
+
+.cell {
+  background-color: white;
+  border: 1px solid gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.TurnHeading{
+    color: #04d9ff;
+    text-decoration: none;
+}
+
+.TwoPlayersGame p{
+    font-size: 40px;
+    text-align: center;
+    color: #04d9ff;
+}
+
+.TwoPlayersGame.row{
+    align-items: flex-start;
+}
+
+.modal .winner{
+    width: 50%;
+    height: 50%;
+    background-color: #ffffff;
+}
+
+.modal .winner h2{
+    font-size: 40px;
+    color: #ff007f;
+}
+
+@media screen and (max-width: 800px) {
+    .TwoPlayersGame{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .board{
+        width: 100% ;
+    }
+    .PlayerTwo,.PlayerOne{
+        width: 100%;
+    }
 }
 
 /*..........................Footer..........................*/
