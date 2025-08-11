@@ -1,4 +1,3 @@
-
 :root{
     --subFont:'Mozilla Headline','Times New Roman';
     --mainFont:'Pixelify sans','Times New Roman';
@@ -12,10 +11,17 @@ body{
     color: white;
 }
 
+h1, h2, h3, h4, h5, h6,
+p, ul, ol, blockquote,dl, fieldset {
+  margin: 0;
+  padding: 0;
+}
+
 h1{
     font-size: 54px;
     text-align: center;
     text-decoration: underline;
+    margin: 10px 0px;
 }
 
 a{

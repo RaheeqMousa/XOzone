@@ -26,7 +26,7 @@ header button{
 main{
     font-family: var(--mainFont);
     color: #ff007f;
-    padding: 30px;
+    padding: 15px;
 }
 
 main a{
@@ -43,7 +43,7 @@ main a:hover{
 }
 
 main .row.FlexCenter a{
-    margin-top: 50px;
+    margin-top: 15px;
 }
 
 main .intro{
@@ -196,6 +196,14 @@ main button:hover{
 .modal .winner h2{
     font-size: 40px;
     color: #ff007f;
+}
+
+.ResetBoard{
+    margin-top: 15px;
+}
+
+.PlayingOptions{
+    gap:5px;
 }
 
 @media screen and (max-width: 800px) {
