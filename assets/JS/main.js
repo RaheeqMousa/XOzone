@@ -2,7 +2,7 @@
 
 document.querySelectorAll(".ModeBtn").forEach(btn => {
     btn.addEventListener('click', (event) => {
-        const mode = event.currentTarget.id; // ensures we get the button's ID
+        const mode = event.currentTarget.id;
         const options = document.querySelector(".modal .options");
 
         let html = `
@@ -22,9 +22,14 @@ document.querySelectorAll(".ModeBtn").forEach(btn => {
         modal.classList.remove("DisplayNone");
     });
 
-    document.querySelector('.CloseButtonWrapper button').addEventListener("click", () => {
-    document.querySelector(".modal").classList.add("DisplayNone"); });
+    
 });
+
+const closeBtn=document.querySelector('.CloseButtonWrapper button');
+if(closeBtn){
+    closeBtn.addEventListener("click", () => {
+    document.querySelector(".modal").classList.add("DisplayNone"); });
+}
 
 /*................................Action After choosing the size..................................*/
 
@@ -130,58 +135,60 @@ buildBoard();
 
 /*..........................Add an event listener to know who clicked and update the board...............................*/
 
+const board=document.querySelector('.board');
+if(board){
+    board.addEventListener('click', (event) => {
+        if (!event.target.classList.contains('cell')) return;
 
-document.querySelector('.board').addEventListener('click', (event) => {
-    if (!event.target.classList.contains('cell')) return;
+        const modal=document.querySelector('.modal');
+        const winner=document.querySelector('.modal .winner');
 
-    const modal=document.querySelector('.modal');
-    const winner=document.querySelector('.modal .winner');
+        const row = parseInt(event.target.dataset.row);
+        const col = parseInt(event.target.dataset.col);
 
-    const row = parseInt(event.target.dataset.row);
-    const col = parseInt(event.target.dataset.col);
+        if (makeMove(gameBoard, row, col, currentPlayer)) {
+            event.target.textContent = currentPlayer === 1 ? "X" : "O";
 
-    if (makeMove(gameBoard, row, col, currentPlayer)) {
-        event.target.textContent = currentPlayer === 1 ? "X" : "O";
+            const TurnHeading=document.querySelector(".TurnHeading");
+            TurnHeading.classList.remove("LeftRight");
+            void TurnHeading.offsetWidth;
+            TurnHeading.textContent= currentPlayer === 1 ? "Tails's Turn" : "Sonic's Turn";
+            TurnHeading.classList.add("LeftRight");
 
-        const TurnHeading=document.querySelector(".TurnHeading");
-        TurnHeading.classList.remove("LeftRight");
-        void TurnHeading.offsetWidth;
-        TurnHeading.textContent= currentPlayer === 1 ? "Tails's Turn" : "Sonic's Turn";
-        TurnHeading.classList.add("LeftRight");
+            const result = checkGame(gameBoard);
+            if (result === 1) {
+                modal.classList.remove('DisplayNone');
+                winner.innerHTML=`
+                    <h2>Sonic Wins!</h2>;
+                `;
 
-        const result = checkGame(gameBoard);
-        if (result === 1) {
-            modal.classList.remove('DisplayNone');
-            winner.innerHTML=`
-                <h2>Sonic Wins!</h2>;
-            `;
+                document.querySelector('.CloseButtonWrapper button').addEventListener("click", () => {
+                document.querySelector(".modal").classList.add("DisplayNone"); });
 
-            document.querySelector('.CloseButtonWrapper button').addEventListener("click", () => {
-            document.querySelector(".modal").classList.add("DisplayNone"); });
+                buildBoard();
+            } else if (result === 2) {
+                modal.classList.remove('DisplayNone');
+                winner.innerHTML=`
+                    <h2>Tails Wins!</h2>
+                `;
 
-            buildBoard();
-        } else if (result === 2) {
-            modal.classList.remove('DisplayNone');
-            winner.innerHTML=`
-                <h2>Tails Wins!</h2>
-            `;
+                document.querySelector('.CloseButtonWrapper button').addEventListener("click", () => {
+                document.querySelector(".modal").classList.add("DisplayNone"); });
 
-            document.querySelector('.CloseButtonWrapper button').addEventListener("click", () => {
-            document.querySelector(".modal").classList.add("DisplayNone"); });
+                buildBoard();
+            } else if (result === "tie") {
+                modal.classList.remove('DisplayNone');
+                winner.innerHTML=`
+                    <h2>It is Tie!</h2>
+                `;
 
-            buildBoard();
-        } else if (result === "tie") {
-            modal.classList.remove('DisplayNone');
-            winner.innerHTML=`
-                <h2>It is Tie!</h2>
-            `;
-
-            document.querySelector('.CloseButtonWrapper button').addEventListener("click", () => {
-            document.querySelector(".modal").classList.add("DisplayNone"); });
-            buildBoard();
-        } else {
-            currentPlayer = currentPlayer === 1 ? 2 : 1;
-            
+                document.querySelector('.CloseButtonWrapper button').addEventListener("click", () => {
+                document.querySelector(".modal").classList.add("DisplayNone"); });
+                buildBoard();
+            } else {
+                currentPlayer = currentPlayer === 1 ? 2 : 1;
+                
+            }
         }
-    }
-});
+    });
+}
