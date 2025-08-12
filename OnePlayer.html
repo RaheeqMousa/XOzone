@@ -34,21 +34,36 @@
     </header>
 
     <main class="container">
-        <div class="rules">
-            <h1 class="UpDown">Game Rules</h1>
-            <ul>
-                <li>Two players take turns placing X or O on the board.</li>
-                <li>The goal is to get a straight line of X/O horizontally, vertically, or diagonally.</li>
-                <li>The number of marks in a row needed to win equals the board size (example: 3 in a row for 3x3, 4 for 4x4).</li>
-                <li>If the board fills up without a winner, the game is a draw.</li>
-                <li>You can play against another player or the computer with three difficulty levels.</li>
-                <li>Choose your board size from 3x3.</li>
-            </ul>
-            <div class="row FlexCenter">
-                <a href="index.html" class="DownUp">Back</a>
-            </div>
+        <h1 class="TurnHeading LeftRight">Your Turn</h1>
+        <div class="row game">
+            <section class="PlayerOne row FlexDirectionColumn LeftRight">
+                <p>Sonic</p>
+                <img src="assets/Images/Sonic.png" alt="Player two" title="Player two" width="200" height="auto">
+            </section>
+            <section class="board">
+
+            </section>
+            <section class="PlayerTwo row FlexDirectionColumn RightLeft">
+                <p>Eggman</p>
+                <img src="assets/Images/eggman.png" alt="Player two" title="Player two" width="200" height="auto">
+            </section>
+        </div>
+
+        <div class="row FlexCenter PlayingOptions">
+            <a href="index.html" class="DownUp">Back</a>
+            <button class="button DownUp ResetBoard">Reset</button>
         </div>
     </main>
+
+    <div class="modal DisplayNone">
+        <div class="CloseButtonWrapper">
+            <button id="CloseBtn">X</button>
+        </div>
+
+        <div class="winner row FlexCenter FlexDirectionColumn">
+
+        </div>
+    </div>
 
     <footer>
         <div class="row">
@@ -62,6 +77,7 @@
         </div>
     </footer>
 
+    <script src="assets/JS/main.js"></script>
 </body>
 
 </html>
