@@ -487,3 +487,16 @@ function displayModal(text){
     });
 }
 
+/*.........................................*/
+
+const musicBtn=document.querySelector("#MusicBtn");
+const music=new Audio("assets/Audios/8bit Dungeon Boss.mp3");
+musicBtn.addEventListener("click",()=>{
+    
+    if(music.paused){
+        music.play();
+        music.loop=true;
+    }else{
+        music.pause();
+    }
+});
