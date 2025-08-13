@@ -271,7 +271,7 @@ if (board && sessionStorage.getItem("choice") == "OnePlayer") {
             } else if (result=="play" && sessionStorage.getItem("difficultly") === "Mid") {
                 midMove(n);
             }else if (result=="play" && sessionStorage.getItem("difficultly") === "Hard"){     
-                bestMove(n);
+                bestMove(n,n);
             }
 
             checkWinning("OnePlayer",checkGame());     
@@ -303,13 +303,11 @@ function easyMove() {
 
 /*.................................Medium level of Player vs Computer........................................*/
 
-function midMove(n){
 
-    if (Math.random() < 0.5) {
-        bestMove(n);
-    } else {
-        easyMove();
-    }
+function midMove(n){
+    
+    bestMove(n,5);
+
 }
 
 function isBoardFull(n) {
@@ -321,16 +319,20 @@ function isBoardFull(n) {
   return true;
 }
 
+
 /*..................................Minimax Algorithm......................................*/
 
 
-function minimax(depth, isMaximizing, boardSize) {
+function minimax(depth, maxDepth, isMaximizing, boardSize) {
   let result = checkGame();
+
+  console.log(`${depth} ${maxDepth}`);
 
   if (result === 1) return 10 - depth;  // computer wins
   if (result === 2) return depth - 10;  // Human wins
   if (result === "tie") return 0;       // Tie
-  
+  if (depth === maxDepth) return 0;
+
   if (result === "play") {
     if (isMaximizing) {
       let maxEval = -Infinity;
@@ -338,7 +340,7 @@ function minimax(depth, isMaximizing, boardSize) {
         for (let j = 0; j < boardSize; j++) {
           if (gameBoard[i][j] === 0) {
             gameBoard[i][j] = 1;
-            let evalScore = minimax(depth + 1, false, boardSize);
+            let evalScore = minimax(depth + 1,maxDepth, false, boardSize);
             gameBoard[i][j] = 0;
             maxEval = Math.max(maxEval, evalScore);
           }
@@ -351,7 +353,7 @@ function minimax(depth, isMaximizing, boardSize) {
         for (let j = 0; j < boardSize; j++) {
           if (gameBoard[i][j] === 0) {
             gameBoard[i][j] = 2;
-            let evalScore = minimax(depth + 1, true, boardSize);
+            let evalScore = minimax(depth + 1,maxDepth, true, boardSize);
             gameBoard[i][j] = 0;
             minEval = Math.min(minEval, evalScore);
           }
@@ -366,7 +368,7 @@ function minimax(depth, isMaximizing, boardSize) {
 /*...........................This function returns teh best move accoarding to the minimax algorithm...................................*/
 
 
-function bestMove(n) {
+function bestMove(n,maxDepth) {
 
   let bestScore = -Infinity;
   let move = null;
@@ -374,7 +376,7 @@ function bestMove(n) {
     for (let j = 0; j < n; j++) {
       if (gameBoard[i][j] === 0) {
         gameBoard[i][j] = 1;
-        let score = minimax(0, false, n);
+        let score = minimax(0, maxDepth, false, n);
         gameBoard[i][j] = 0;
         if (score > bestScore) {
           bestScore = score;
@@ -392,9 +394,9 @@ function bestMove(n) {
       TurnHeading.textContent = "Your Turn";
     }, 500);
 
-    currentPlayer=2;
-    
+    currentPlayer=2;    
   }
+
 }
 
 
