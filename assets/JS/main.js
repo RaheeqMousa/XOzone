@@ -43,26 +43,7 @@ document.querySelectorAll(".ModeBtn").forEach(btn => {
 
 });
 
-const closeBtn = document.querySelector('.CloseButtonWrapper button');
-if (closeBtn) {
-    closeBtn.addEventListener("click", () => {
-        modal.classList.add("DisplayNone");
-    });
-}
 
-document.addEventListener("keydown",(e)=>{
-        console.log("click");
-        e.preventDefault();
-        if(e.code==='Escape'){
-            modal.classList.add('DisplayNone');
-        }
-    });
-
-window.onclick=function(event){
-    if(event.target==modal){
-        modal.classList.add("DisplayNone");
-    }
-}
 
 /*................................Action After choosing the size..................................*/
 let gameBoard = [];
@@ -504,14 +485,25 @@ function displayModal(text){
         document.querySelector(".modal").classList.add("DisplayNone");
     });
 
-    
-    document.addEventListener("keydown",(e)=>{
-        console.log("click");
-        e.preventDefault();
+}
+
+const closeBtn = document.querySelector('.CloseButtonWrapper button');
+if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+        modal.classList.add("DisplayNone");
+    });
+}
+
+document.addEventListener("keydown",(e)=>{
         if(e.code==='Escape'){
             modal.classList.add('DisplayNone');
         }
     });
+
+window.onclick=function(event){
+    if(event.target==modal){
+        modal.classList.add("DisplayNone");
+    }
 }
 
 /*.........................................*/
