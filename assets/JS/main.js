@@ -1,3 +1,5 @@
+const modal=document.querySelector(".modal");
+
 
 /*..............................Action for the clicked Mode button..................................*/
 
@@ -34,7 +36,7 @@ document.querySelectorAll(".ModeBtn").forEach(btn => {
 
         options.innerHTML = html;
 
-        const modal = document.querySelector(".modal");
+        //const modal = document.querySelector(".modal");
         modal.classList.remove("DisplayNone");
     });
 
@@ -44,8 +46,22 @@ document.querySelectorAll(".ModeBtn").forEach(btn => {
 const closeBtn = document.querySelector('.CloseButtonWrapper button');
 if (closeBtn) {
     closeBtn.addEventListener("click", () => {
-        document.querySelector(".modal").classList.add("DisplayNone");
+        modal.classList.add("DisplayNone");
     });
+}
+
+document.addEventListener("keydown",(e)=>{
+        console.log("click");
+        e.preventDefault();
+        if(e.code==='Escape'){
+            modal.classList.add('DisplayNone');
+        }
+    });
+
+window.onclick=function(event){
+    if(event.target==modal){
+        modal.classList.add("DisplayNone");
+    }
 }
 
 /*................................Action After choosing the size..................................*/
@@ -53,7 +69,7 @@ let gameBoard = [];
 
 function setBoardSize(choice) {
 
-    const modal = document.querySelector(".modal");
+    // const modal = document.querySelector(".modal");
     modal.classList.add("DisplayNone");
 
     const boardSize = document.querySelector("#BoardSize").value;
@@ -326,10 +342,10 @@ function isBoardFull(n) {
 function minimax(depth, maxDepth, isMaximizing, boardSize) {
   let result = checkGame();
 
-  console.log(`${depth} ${maxDepth}`);
+  //console.log(`${depth} ${maxDepth}`);
 
-  if (result === 1) return 10 - depth;  // computer wins
-  if (result === 2) return depth - 10;  // Human wins
+  if (result === 1) return depth*depth - depth;  // computer wins
+  if (result === 2) return depth*depth - 10;  // Human wins
   if (result === "tie") return 0;       // Tie
   if (depth === maxDepth) return 0;
 
@@ -477,7 +493,7 @@ function updateHeading(heading){
 
 
 function displayModal(text){
-    const modal = document.querySelector('.modal');
+    //const modal = document.querySelector('.modal');
     const winner = document.querySelector('.modal .winner');
     modal.classList.remove('DisplayNone');
     winner.innerHTML = `
@@ -487,18 +503,80 @@ function displayModal(text){
     document.querySelector('.CloseButtonWrapper button').addEventListener("click", () => {
         document.querySelector(".modal").classList.add("DisplayNone");
     });
+
+    
+    document.addEventListener("keydown",(e)=>{
+        console.log("click");
+        e.preventDefault();
+        if(e.code==='Escape'){
+            modal.classList.add('DisplayNone');
+        }
+    });
 }
 
 /*.........................................*/
 
 const musicBtn=document.querySelector("#MusicBtn");
+const musicIcon = musicBtn.querySelector("i");
 const music=new Audio("assets/Audios/8bit Dungeon Boss.mp3");
 musicBtn.addEventListener("click",()=>{
     
     if(music.paused){
         music.play();
         music.loop=true;
+        musicIcon.className="fa-solid fa-pause";
     }else{
         music.pause();
+        musicIcon.className="fa-solid fa-music";
     }
+});
+
+
+/*..........................................*/
+
+const modeBtn=document.querySelector("#ToggleModeBtn");
+const icon = modeBtn.querySelector("i");
+modeBtn.addEventListener("click",()=>{
+
+        document.querySelector('body').classList.toggle("DarkMode");
+        document.querySelectorAll('.LightColor').forEach(x => {
+            x.classList.toggle("DarkColor");
+        });
+
+        document.querySelectorAll('header nav ul li button').forEach(x => {
+            x.classList.toggle('ToggleIcons');
+        });
+
+    if(icon.className=="fa-solid fa-moon"){
+        icon.className="fa-solid fa-sun";
+        sessionStorage.setItem("mode","dark");
+    }else{
+        icon.className="fa-solid fa-moon";
+        sessionStorage.setItem("mode","light");
+    }
+});
+
+
+window.addEventListener("DOMContentLoader",()=>{
+    const mode= sessionStorage.getItem("mode");
+    const  icon=document.querySelector("#ToggleModeBtn i");
+
+    if(mode=="dark"){
+        document.querySelector("body").classList.add("DarkMode");
+        document.querySelectorAll("LightColor").forEach(x=>{
+            x.classList.add("DarkColor")
+        });
+        document.querySelectorAll('header nav ul li button').forEach(
+            x => x.classList.add('ToggleIcons'));
+        icon.className = "fa-solid fa-sun";
+    }else{
+        document.querySelector("body").classList.remove("DarkMode");
+        document.querySelectorAll("LightColor").forEach(x=>{
+            x.classList.remove("DarkColor")
+        });
+        document.querySelectorAll('header nav ul li button').forEach(
+            x => x.classList.remove('ToggleIcons'));
+        icon.className = "fa-solid fa-moon";    
+    }
+
 });
