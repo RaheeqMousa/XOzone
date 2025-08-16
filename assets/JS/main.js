@@ -500,12 +500,11 @@ document.addEventListener("keydown",(e)=>{
         }
     });
 
-window.onclick=function(event){
+window.addEventListener("click",(event)=>{
     if(event.target==modal){
         modal.classList.add("DisplayNone");
     }
-}
-
+});
 /*....................Music toggle.....................*/
 
 const musicBtn=document.querySelector("#MusicBtn");
@@ -544,7 +543,6 @@ modeBtn.addEventListener("click",()=>{
 
 window.addEventListener("DOMContentLoaded",()=>{
     let mode= sessionStorage.getItem("mode");
-    const  icon=document.querySelector("#ToggleModeBtn i");
     if(mode===null){
         mode="dark";
     }
