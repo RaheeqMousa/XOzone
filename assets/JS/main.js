@@ -506,7 +506,7 @@ window.onclick=function(event){
     }
 }
 
-/*.........................................*/
+/*....................Music toggle.....................*/
 
 const musicBtn=document.querySelector("#MusicBtn");
 const musicIcon = musicBtn.querySelector("i");
@@ -524,20 +524,13 @@ musicBtn.addEventListener("click",()=>{
 });
 
 
-/*..........................................*/
+/*....................These code lines are used for mode toggle......................*/
 
 const modeBtn=document.querySelector("#ToggleModeBtn");
 const icon = modeBtn.querySelector("i");
 modeBtn.addEventListener("click",()=>{
 
-        document.querySelector('body').classList.toggle("DarkMode");
-        document.querySelectorAll('.LightColor').forEach(x => {
-            x.classList.toggle("DarkColor");
-        });
-
-        document.querySelectorAll('header nav ul li button').forEach(x => {
-            x.classList.toggle('ToggleIcons');
-        });
+        document.querySelector('body').classList.toggle("LightMode");
 
     if(icon.className=="fa-solid fa-moon"){
         icon.className="fa-solid fa-sun";
@@ -549,26 +542,30 @@ modeBtn.addEventListener("click",()=>{
 });
 
 
-window.addEventListener("DOMContentLoader",()=>{
-    const mode= sessionStorage.getItem("mode");
+window.addEventListener("DOMContentLoaded",()=>{
+    let mode= sessionStorage.getItem("mode");
     const  icon=document.querySelector("#ToggleModeBtn i");
+    if(mode===null){
+        mode="dark";
+    }
 
     if(mode=="dark"){
-        document.querySelector("body").classList.add("DarkMode");
-        document.querySelectorAll("LightColor").forEach(x=>{
-            x.classList.add("DarkColor")
-        });
-        document.querySelectorAll('header nav ul li button').forEach(
-            x => x.classList.add('ToggleIcons'));
+        document.querySelector("body").classList.remove("LightMode");
         icon.className = "fa-solid fa-sun";
     }else{
-        document.querySelector("body").classList.remove("DarkMode");
-        document.querySelectorAll("LightColor").forEach(x=>{
-            x.classList.remove("DarkColor")
-        });
-        document.querySelectorAll('header nav ul li button').forEach(
-            x => x.classList.remove('ToggleIcons'));
+        document.querySelector("body").classList.add("LightMode");
         icon.className = "fa-solid fa-moon";    
     }
 
+});
+
+/*........................This to prevent the user from opening the playing page without the prev step.............................*/
+
+window.addEventListener("DOMContentLoaded",()=>{
+     const boardSize=sessionStorage.getItem("boardSize");
+    if(!boardSize && 
+        (window.location.pathname.endsWith('TwoPlayer.html') || window.location.pathname.endsWith('OnePlayer.html'))){
+
+        window.open("index.html","_self");
+    }
 });

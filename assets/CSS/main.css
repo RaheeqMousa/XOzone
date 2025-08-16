@@ -252,36 +252,31 @@ footer #mail{
 
 /*......................Dark mode......................*/
 
-.DarkMode{
+.LightMode{
     background-color: white;
     color: black;
 }
 
-.DarkMode .modal{
+.LightMode .modal{
    background-color: white;
 }
 
-.DarkMode ul.LightColor li{
+.LightMode ul.LightColor li{
     color: black;
 } 
 
-.ToggleIcons{
+.LightMode a.LightColor{
+    color: black;
+}
+
+.LightMode header button{
     background-color: white;
 }
 
-.ToggleIcons i{
+.LightMode header button i{
     color: black;
 }
-
 
 .LightColor{
     color:white;
-}
-
-.DarkColor{
-    color:black ;
-}
-
-.DarkColor a{
-    color: black;
 }
