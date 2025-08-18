@@ -323,10 +323,8 @@ function isBoardFull(n) {
 function minimax(depth, maxDepth, isMaximizing, boardSize) {
   let result = checkGame();
 
-  //console.log(`${depth} ${maxDepth}`);
-
-  if (result === 1) return depth*depth - depth;  // computer wins
-  if (result === 2) return depth*depth - 10;  // Human wins
+  if (result === 1) return 10 - depth;  // computer wins
+  if (result === 2) return depth - 10;  // Human wins
   if (result === "tie") return 0;       // Tie
   if (depth === maxDepth) return 0;
 
