@@ -11,7 +11,7 @@
     <meta property="og:title" content="XOzone - Rules">
     <meta property="og:description" content="PicSnap - Entertain yourself and challenge your friends.">
     <meta property="og:image" content="assets/Images/logo.svg">
-    <link rel="icon" type="image/" href="assets/Images/logo.svg">
+    <link rel="icon" type="image/svg+xml" href="assets/Images/logo.svg">
     <link href="assets/CSS/main.css" rel="stylesheet">
 
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
@@ -26,19 +26,19 @@
 
 <body>
 
-    <header class="row JustifyEnd">
+    <header class="row justify-end">
         <nav aria-label="Settings navigation">
             <ul class="row">
-                <li><button id="MusicBtn" aria-label="Music settings"><i class="fa-solid fa-music"></i></button></li>
-                <li><button id="ToggleModeBtn" aria-label="Toggle Mode"><i class="fa-solid fa-sun"></i></button></li>
+                <li><button id="music-btn" aria-label="Music settings"><i class="fa-solid fa-music"></i></button></li>
+                <li><button id="toggle-mode-btn" aria-label="Toggle Mode"><i class="fa-solid fa-sun"></i></button></li>
             </ul>
         </nav>
     </header>
 
     <main class="container">
         <div class="rules">
-            <h1 class="UpDown">Game Rules</h1>
-            <ul class="LightColor">
+            <h1 class="up-down">Game Rules</h1>
+            <ul class="light-color">
                 <li>Two players take turns placing X or O on the board.</li>
                 <li>The goal is to get a straight line of X/O horizontally, vertically, or diagonally.</li>
                 <li>The number of marks in a row needed to win equals the board size (example: 3 in a row for 3x3, 4 for 4x4).</li>
@@ -46,8 +46,8 @@
                 <li>You can play against another player or the computer with three difficulty levels.</li>
                 <li>Choose your board size from 3x3.</li>
             </ul>
-            <div class="row FlexCenter">
-                <a href="index.html" class="DownUp">Back</a>
+            <div class="row flex-center">
+                <a href="index.html" class="down-up">Back</a>
             </div>
         </div>
     </main>
@@ -58,13 +58,16 @@
                 <img src="assets/Images/logo.svg" alt="XOzone logo" title="XOzone logo" width="50" height="50">
                 <h4>XOzone</h4>
             </div>
-            <a href="#" class="LightColor">Privacy Policy</a>
-            <span>Copyright &copy; 2025 <a href="mailto:raheeqmousa99@gmail.com" class="LightColor" id="mail">raheeqmousa99@gmail.com</a>.
+            <a href="#" class="light-color">Privacy Policy</a>
+            <span>Copyright &copy; 2025 <a href="mailto:raheeqmousa99@gmail.com" class="light-color" id="mail">raheeqmousa99@gmail.com</a>.
                 All rights reserved</span>
         </div>
     </footer>
 
-    <script src="assets/JS/main.js"></script>
+    <script src="assets/JS/ui.js"></script>
+    <script src="assets/JS/audio.js"></script>
+    <script src="assets/JS/theme.js"></script>
+
 </body>
 
 </html>

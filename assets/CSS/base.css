@@ -65,7 +65,7 @@ button{
     flex-wrap: wrap;
 }
 
-.FlexDirectionColumn{
+.flex-direction-column{
     flex-direction: column;
 }
 
@@ -73,19 +73,19 @@ button{
     display:flex;
 }
 
-.AlignEnd{
+.align-end{
     align-items: flex-end;
 }
 
-.JustifyEnd{
+.justify-end{
     justify-content: flex-end;
 }
 
-.AlignStart{
+.align-start{
     align-items: flex-start;
 }
 
-.FlexCenter{
+.flex-center{
     justify-content: center;
     align-items: center;
 }
@@ -98,52 +98,52 @@ button{
 
  /*...........................Animation...............................*/
 
-.RightLeft, .LeftRight, .UpDown, .DownUp{
+.right-left, .left-right, .up-down, .down-up{
     opacity: 0;
 }
 
-.RightLeft{
-    animation: ToLeft 1s forwards;
+.right-left{
+    animation: to-left 1s forwards;
     transform: translateX(50%);
 }
 
-.LeftRight{
-    animation: ToRight 1s forwards;
+.left-right{
+    animation: to-right 1s forwards;
     transform: translateX(-50%);
 }
 
-.DownUp{
-    animation: UP 1s forwards;
+.down-up{
+    animation: up 1s forwards;
     transform: translateY(50%);
 }
 
-.UpDown{
-    animation: ToDown 1s forwards;
+.up-down{
+    animation: to-down 1s forwards;
     transform: translateY(-50%);
 }
 
- @keyframes ToDown {
+ @keyframes to-down {
     to{
         opacity:1;
         transform: translateY(0);
     }
 }
 
-@keyframes ToRight {
+@keyframes to-right {
     to{
         opacity:1;
         transform: translateX(0);
     }
 }
 
-@keyframes ToLeft {
+@keyframes to-left {
     to{
         opacity:1;
         transform: translateX(0);
     }
 }
 
-@keyframes UP {
+@keyframes up {
     to{
         opacity:1;
         transform: translateY(0);

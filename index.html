@@ -11,7 +11,7 @@
     <meta property="og:title" content="XOzone - Home">
     <meta property="og:description" content="PicSnap - Entertain yourself and challenge your friends.">
     <meta property="og:image" content="assets/Images/logo.svg">
-    <link rel="icon" type="image/" href="assets/Images/logo.svg">
+    <link rel="icon" type="image/svg+xml" href="assets/Images/logo.svg">
     <link href="assets/CSS/main.css" rel="stylesheet">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -25,34 +25,34 @@
 
 <body>
 
-    <header class="row JustifyEnd">
+    <header class="row justify-end">
         <nav aria-label="Settings navigation">
             <ul class="row">
-                <li><button id="MusicBtn" aria-label="Music settings"><i class="fa-solid fa-music"></i></button></li>
-                <li><button id="ToggleModeBtn" aria-label="Toggle Mode"><i class="fa-solid fa-sun"></i></button></li>
+                <li><button id="music-btn" aria-label="Music settings"><i class="fa-solid fa-music"></i></button></li>
+                <li><button id="toggle-mode-btn" aria-label="Toggle Mode"><i class="fa-solid fa-sun"></i></button></li>
             </ul>
         </nav>
     </header>
 
     <main class="container">
-        <div class="Intro">
-            <h1 class="UpDown">XOzone</h1>
+        <div class="flex flex-direction-column intro">
+            <h1 class="up-down">XOzone</h1>
             <div class="row choice">
-                <section class="row FlexDirectionColumn LeftRight">
+                <section class="row flex-direction-column left-right">
                     <img src="assets/Images/two players.png" alt="Two players" title="Two players" width="250"
                         height="250">
                     <button id="TwoPlayer" class="button ModeBtn">Two Players</button>
                 </section>
 
-                <section class="row FlexDirectionColumn RightLeft">
+                <section class="row flex-direction-column right-left">
                     <img src="assets/Images/one player.webp" alt="Player vs Computer" title="One player" width="250"
                         height="300">
                     <button id="OnePlayer" class="button ModeBtn">Player VS Computer</button>
                 </section>
             </div>
 
-            <div class="row FlexCenter DownUp">
-                <a href="rules.html" id="RulesBtn">Rules</a>
+            <div class="row flex-center down-up">
+                <a href="rules.html" id="rules-btn">Rules</a>
             </div>
         </div>
     </main>
@@ -63,23 +63,26 @@
                 <img src="assets/Images/logo.svg" alt="XOzone logo" title="XOzone logo" width="50" height="50">
                 <h4>XOzone</h4>
             </div>
-            <a href="#" class="LightColor">Privacy Policy</a>
-            <span>Copyright &copy; 2025 <a href="mailto:raheeqmousa99@gmail.com" class="LightColor" id="mail" >raheeqmousa99@gmail.com</a>.
+            <a href="#" class="light-color">Privacy Policy</a>
+            <span>Copyright &copy; 2025 <a href="mailto:raheeqmousa99@gmail.com" class="light-color" id="mail" >raheeqmousa99@gmail.com</a>.
                 All rights reserved</span>
         </div>
     </footer>
 
-    <div class="modal DisplayNone" role="dialog" aria-modal="true" aria-label="Choose board Size">
-        <div class="CloseButtonWrapper">
-            <button id="CloseBtn">X</button>
+    <div class="modal display-none" role="dialog" aria-modal="true" aria-label="Choose board Size">
+        <div class="close-button-wrapper">
+            <button id="close-btn">X</button>
         </div>
 
-        <div class="options row FlexDirectionColumn">
+        <div class="options row flex-direction-column">
 
         </div>
     </div>
 
-    <script src="assets/JS/main.js"></script>
+    <script type="module" src="assets/JS/ui.js"></script>
+    <script src="assets/JS/audio.js"></script>
+    <script src="assets/JS/theme.js"></script>
+
 </body>
 
 </html>

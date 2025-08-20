@@ -40,16 +40,16 @@ main a{
 }
 
 main a:hover{
-    font-size: 2rem;
+    transform: scale(1.15);
 }
 
-main .row.FlexCenter a{
+main .row.flex-center a{
     margin-top: 15px;
     border-radius: 20px;
 }
 
 main .intro{
-    gap:20px;
+    gap:10px;
 }
 
 .button{
@@ -67,7 +67,7 @@ main button:hover{
     font-size: 2rem;
 }
 
-#RulesBtn{
+#rules-btn{
     margin-top: 40px;
 }
 
@@ -107,22 +107,13 @@ main button:hover{
     justify-content: center;
 }
 
-.BoardSizeModal{
-    background-color: rgb(255, 255, 255);
-    padding: 20px 40px;
-    border-radius:20px;
-    box-shadow:0 4px 4px rgba(0,0,0,.1);
-    position: relative;
-}
-
-.CloseButtonWrapper{
+.close-button-wrapper{
     position: absolute;
     left: 80px;
     top: 50px;
-    
 }
 
-.CloseButtonWrapper button{
+.close-button-wrapper button{
     color: #f4f6fa;
     font-weight: bold;
     font-size: 36px;
@@ -133,7 +124,7 @@ main button:hover{
     cursor: pointer;
 }
 
-.DisplayNone{
+.display-none{
     display: none;
 }
 
@@ -182,7 +173,7 @@ main button:hover{
   caret-color: transparent;
 }
 
-.TurnHeading{
+.turn-heading{
     color: #04d9ff;
     text-decoration: none;
 }
@@ -208,11 +199,11 @@ main button:hover{
     color: #ff007f;
 }
 
-.ResetBoard{
+.reset-board{
     margin-top: 15px;
 }
 
-.PlayingOptions{
+.playing-options{
     gap:5px;
 }
 
@@ -224,7 +215,7 @@ main button:hover{
     .board{
         width: 100% ;
     }
-    .PlayerTwo,.PlayerOne{
+    .player-two,.player-one{
         width: 100%;
     }
 }
@@ -252,31 +243,31 @@ footer #mail{
 
 /*......................Dark mode......................*/
 
-.LightMode{
+.light-mode{
     background-color: white;
     color: black;
 }
 
-.LightMode .modal{
+.light-mode .modal{
    background-color: white;
 }
 
-.LightMode ul.LightColor li{
+.light-mode ul.light-color li{
     color: black;
 } 
 
-.LightMode a.LightColor{
+.light-mode a.light-color{
     color: black;
 }
 
-.LightMode header button{
+.light-mode header button{
     background-color: white;
 }
 
-.LightMode header button i{
+.light-mode header button i{
     color: black;
 }
 
-.LightColor{
+.light-color{
     color:white;
 }
