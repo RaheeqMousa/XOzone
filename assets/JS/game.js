@@ -1,8 +1,18 @@
-import { currentPlayer, setCurrentPlayer, board, gameBoard, makeMove, checkGame, checkStatus } from "./ui.js";
-/*..........................Add an event listener to know who clicked and update the board...............................*/
 
-if (board && sessionStorage.getItem("choice") == "TwoPlayer") {
-    board.addEventListener('click', (event) => {
+export class TwoPlayer{
+
+    constructor(utils) {
+        this.gameUtils=utils;
+        this.clickEvents();
+    }
+
+    clickEvents(){
+        if(!this.board) return;
+
+        this.gameUtils.board.addEventListener("click",e=>this.handleCellClick(e));
+    }
+
+    handleCellClick(event){
         if (!event.target.classList.contains('cell')) return;
 
         const modal = document.querySelector('.modal');
@@ -15,8 +25,8 @@ if (board && sessionStorage.getItem("choice") == "TwoPlayer") {
         if (makeMove(row, col, currentPlayer)) {
             
             event.target.textContent = currentPlayer === 1 ? "X" : "O";
-            checkStatus();
-            
+            this.gameUtils.checkStatus();
         }
-    });
+    }
+
 }
