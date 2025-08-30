@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Two Players - XOzone</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Tic Tac Toe play Website">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Raheeq Mousa">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="XOzone - Two Players">
+    <meta property="og:description" content="XOzone - Entertain yourself and challenge your friends.">
+    <meta property="og:image" content="assets/Images/logo.svg">
+    <link rel="icon" type="image/svg+xml" href="assets/Images/logo.svg">
+    <link href="assets/CSS/main.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" 
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mozilla+Headline:wght@200..700&display=swap&family=Pixelify+Sans:wght@400..700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="row justify-end">
+        <nav aria-label="Settings navigation">
+            <ul class="row">
+                <li><button id="music-btn" aria-label="Music settings"><i class="fa-solid fa-music"></i></button></li>
+                <li><button id="toggle-mode-btn" aria-label="Toggle Mode"><i class="fa-solid fa-sun"></i></button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1 class="turn-heading left-right">Tails's Turn</h1>
+        <div class="row game">
+            <section class="player-one row flex-direction-column left-right">
+                <p>Tails</p>
+                <img src="assets/Images/tails.png" alt="Tails" title="Tails" width="200" height="200">
+            </section>
+            <section class="board">
+
+            </section>
+            <section class="player-two row flex-direction-column right-left">
+                <p>Sonic</p>
+                <img src="assets/Images/Sonic.png" alt="Sonic the Hedgehog" title="Sonic the Hedgehog" width="200" height="250">
+            </section>
+        </div>
+
+        <div class="row flex-center playing-options">
+            <a href="index.html" class="down-up">Back</a>
+            <button class="button down-up reset-board">Reset</button>            
+        </div>   
+    </main>
+
+    <div class="modal display-none" role="dialog" aria-modal="true" aria-label="Display game winner">
+            <div class="close-button-wrapper">
+                <button id="close-btn">X</button>
+            </div>
+
+            <div class="winner row flex-center flex-direction-column">
+
+            </div>
+        </div>
+
+    <footer>
+        <div class="row">
+            <div class="row">
+                <img src="assets/Images/logo.svg" alt="XOzone logo" title="XOzone logo" width="50" height="50">
+                <h4>XOzone</h4>
+            </div>
+            <a href="#" class="light-color">Privacy Policy</a>
+            <span>Copyright &copy; 2025 <a href="mailto:raheeqmousa99@gmail.com" id="mail" class="light-color">raheeqmousa99@gmail.com</a>.
+                All rights reserved</span>
+        </div>
+    </footer>
+
+    <script type="module" src="assets/JS/main.js"></script>
+    <script src="assets/JS/audio.js"></script>
+    <script src="assets/JS/theme.js"></script>
+
+</body>
+
+</html>
