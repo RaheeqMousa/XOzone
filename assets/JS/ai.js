@@ -131,7 +131,7 @@ export class PlayerVSComputer{
                 this.gameUtils.gameBoard[i][j] = 0;
                 maxEval = Math.max(maxEval, evalScore);
                 alpha=Math.max(alpha,evalScore);
-                if(beta<=alpha) return alpha;
+                if(beta<=alpha) return maxEval;
               }
             }
           }
