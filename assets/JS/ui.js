@@ -26,7 +26,7 @@ export class UI {
 
         const gameDifficult = document.querySelector("#GameDifficult");
         if (gameDifficult)
-            sessionStorage.setItem("difficultly", gameDifficult.value);
+            sessionStorage.setItem("difficulty", gameDifficult.value);
 
         window.open(`${choice}.html`, "_self");
     }
@@ -181,7 +181,6 @@ export class UI {
                 }, 2000);
             }
 
-
         }
         else if (res == 2) {
             this.lightUp(this.positions);
@@ -332,7 +331,7 @@ export class UI {
 
         if (mode === "OnePlayer") {
             const difficult = ["Easy", "Mid", "Hard"];
-            html += `<div><label>Choose Difficultly</label><select id="GameDifficult">`;
+            html += `<div><label>Choose Difficulty</label><select id="GameDifficult">`;
             for (let i = 0; i < 3; i++) {
                 html += `<option value='${difficult[i]}'>${difficult[i]}</option>`;
             }

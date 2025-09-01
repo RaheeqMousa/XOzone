@@ -7,16 +7,13 @@ export class TwoPlayer{
     }
 
     clickEvents(){
-        if(!this.board) return;
-
+        if(!this.gameUtils.board) return;
+        
         this.gameUtils.board.addEventListener("click",e=>this.handleCellClick(e));
     }
 
     handleCellClick(event){
         if (!event.target.classList.contains('cell')) return;
-
-        const modal = document.querySelector('.modal');
-        const winner = document.querySelector('.modal .winner');
 
         const row = parseInt(event.target.dataset.row);
         const col = parseInt(event.target.dataset.col);

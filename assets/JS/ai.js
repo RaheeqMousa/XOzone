@@ -28,13 +28,13 @@ export class PlayerVSComputer{
             this.gameUtils.checkStatus();
             let result = this.gameUtils.checkGame();
             
-            if (result=="play" && sessionStorage.getItem("difficultly") === "Easy") {           
+            if (result=="play" && sessionStorage.getItem("difficulty") === "Easy") {           
                 this.easyMove();    
                                  
-            } else if (result=="play" && sessionStorage.getItem("difficultly") === "Mid") {
+            } else if (result=="play" && sessionStorage.getItem("difficulty") === "Mid") {
                 this.midMove(n);
                  
-            }else if (result=="play" && sessionStorage.getItem("difficultly") === "Hard"){     
+            }else if (result=="play" && sessionStorage.getItem("difficulty") === "Hard"){     
                 this.bestMove(n,n);
                
             }
@@ -112,7 +112,7 @@ export class PlayerVSComputer{
 
 /*..................................Minimax Algorithm......................................*/
   
-    minimax(depth, maxDepth, isMaximizing, boardSize) {
+    minimax(depth, maxDepth, isMaximizing, boardSize, alpha=-Infinity, beta= Infinity) {
       let result = this.gameUtils.checkGame();
 
       if (result === 1) return 10 - depth;  // computer wins
@@ -130,6 +130,8 @@ export class PlayerVSComputer{
                 let evalScore = this.minimax(depth + 1,maxDepth, false, boardSize);
                 this.gameUtils.gameBoard[i][j] = 0;
                 maxEval = Math.max(maxEval, evalScore);
+                alpha=Math.max(alpha,evalScore);
+                if(beta<=alpha) return alpha;
               }
             }
           }
@@ -143,6 +145,8 @@ export class PlayerVSComputer{
                 let evalScore = this.minimax(depth + 1,maxDepth, true, boardSize);
                 this.gameUtils.gameBoard[i][j] = 0;
                 minEval = Math.min(minEval, evalScore);
+                beta = Math.min(beta, evalScore);
+                if (beta <= alpha) return minEval;
               }
             }
           }
