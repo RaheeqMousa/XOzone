@@ -15,8 +15,8 @@ Additionally, the game includes **Light/Dark mode** and a **background music but
    - AI uses **Minimax algorithm with Alpha-Beta pruning**.
    - Three difficulty levels:
      - **Easy**: Random moves.
-     - **Medium**: Mix of random and Minimax.
-     - **Hard**: Full Minimax with Alpha-Beta pruning.
+     - **Medium**: Limited-depth Minimax (`depth = n*n / 3`) for faster computation on larger boards.
+     - **Hard**: Full Minimax with Alpha-Beta pruning (optimal moves).
 2. **Multiplayer**
    - Two players can take turns on the same device.
 
@@ -31,7 +31,7 @@ Additionally, the game includes **Light/Dark mode** and a **background music but
 - **Light/Dark mode toggle**.
 - **Background music button** to play/pause music.
 - Easy-to-use game controls for selecting mode, difficulty, and board size.
-  
+
 
 ## Minimax Algorithm with Alpha-Beta Pruning Explanation
 
@@ -49,12 +49,11 @@ The **Minimax algorithm** is a recursive decision-making algorithm used in AI fo
    - `Alpha` = Best already explored score for Maximizer.
    - `Beta` = Best already explored score for Minimizer.
    - Skip evaluating branches if `Beta <= Alpha`.
-5. **Backpropagation**:
-   - AI selects the move with the **highest score**.
-   - Human moves reduce AI’s score.
-6. **Difficulty levels**:
+5. **Difficulty levels**:
    - Easy → random moves.
-   - Medium → weighted random/Minimax.
-   - Hard → full Minimax with Alpha-Beta pruning.
+   - Medium → **limited-depth Minimax**, depth = `n*n / 3`, for faster computation.
+   - Hard → full Minimax with Alpha-Beta pruning (optimal moves).
 
-*Note*: This optimization is especially important for larger boards (4x4, 5x5) where the number of possible moves grows exponentially.
+*Note*: Limited-depth for Medium level is important for larger boards to prevent the AI from taking too long to make a move. Full-depth Minimax is used in Hard level for maximum challenge.
+git clone https://github.com/yourusername/tic-tac-toe.git
+cd tic-tac-toe
