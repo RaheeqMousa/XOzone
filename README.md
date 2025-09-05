@@ -7,6 +7,11 @@ Additionally, the game includes **Light/Dark mode** and a **background music but
 
 **Note:** This project must be opened from a **Live Server** (e.g., VS Code Live Server) because the JavaScript files are **ES6 modules**.
 
+# Project Demo
+[Watch Full Video Demo](https://drive.google.com/file/d/1qgJsJ3I44tq7zK1ySFkI2E--7m8Gdh_C/view?usp=drive_link)
+
+# Live Demo
+[View XOzone App](https://raheeqmousa.github.io/XOzone/)
 
 ## Features
 
