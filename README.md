@@ -60,5 +60,3 @@ The **Minimax algorithm** is a recursive decision-making algorithm used in AI fo
    - Hard → full Minimax with Alpha-Beta pruning (optimal moves).
 
 *Note*: Limited-depth for Medium level is important for larger boards to prevent the AI from taking too long to make a move. Full-depth Minimax is used in Hard level for maximum challenge.
-git clone https://github.com/yourusername/tic-tac-toe.git
-cd tic-tac-toe
