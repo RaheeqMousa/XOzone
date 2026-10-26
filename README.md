@@ -5,7 +5,8 @@ This project is a fully interactive **Tic Tac Toe game** built using **HTML, CSS
 
 Additionally, the game includes **Light/Dark mode** and a **background music button** for a more engaging experience. The game logic is organized using **Object-Oriented Programming (OOP)** with **classes** for modularity and reusability.
 
-**Note:** This project must be opened from a **Live Server** (e.g., VS Code Live Server) because the JavaScript files are **ES6 modules**.
+**Note:** This project must be opened from a **Live Server** (e.g., VS Code Live Server) because the JavaScript files are **ES6 modules**.<br>
+**Also, the source code for this project is available in the <a href="https://github.com/RaheeqMousa/XOzone/tree/ReleaseV1">ReleaseV1 branch</a> of this repository.**
 
 # Project Demo
 [Watch Full Video Demo](https://drive.google.com/file/d/1qgJsJ3I44tq7zK1ySFkI2E--7m8Gdh_C/view?usp=drive_link)
